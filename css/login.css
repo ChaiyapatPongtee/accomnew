@@ -1,0 +1,66 @@
+.background {
+  background-image: url('/assets/images/bg.png');
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(28 31 70 / 72%);
+  filter: blur(10px);
+}
+.container-box {
+  backdrop-filter: blur(5px);
+    width: 450px;
+    margin: 0 auto;
+    background-color: #283a4fee;
+    border-radius: 15px;
+    padding: 35px;
+    margin-top: 20px;
+    border: #fff 1px solid;
+    box-shadow: 0 1px 50px #ffffff59;
+}
+.container-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.underline {
+  border-bottom: 7px solid #fd9800;
+  border-radius: 5px;
+  display: inline-block;
+}
+.login-box {
+  background-color: #00bac7;
+  padding: .7rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.login-box label {
+  font-size: 20px;
+  color: white;
+}
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: #00bac7;
+}
+.forget-text a{
+  color: #00bac7;
+}

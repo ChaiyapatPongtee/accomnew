@@ -1,0 +1,339 @@
+.green-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00BAC7;
+    flex: none;
+}
+
+.rented {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #00BAC7;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.rented img {
+    height: fit-content;
+}
+
+.bg-gray {
+    background-color: #F4F4F4;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.switch-filter {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    background-color: white;
+    border: 2px solid #F4F4F4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.switch-filter input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-filter .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--primary);
+    transition: .5s ease 0s;
+}
+
+.switch-filter input:checked~.slider {
+    transform: translateX(100%);
+}
+
+.switch-filter .list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--gray);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.switch-filter .map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--gray);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.search-icon {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    background-color: var(--primary);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.my-table {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    table-layout: auto;
+    background-color: white;
+}
+
+.my-table thead tr th {
+    background-color: #0E2338;
+    color: white;
+    padding: 10px;
+    font-size: 80%;
+    white-space: nowrap;
+}
+
+.my-table tbody tr td {
+    padding: 10px;
+    vertical-align: top;
+    font-size: 80%;
+}
+
+.my-table tbody tr td:nth-child(1){
+    min-width: 160px;
+    max-width: 160px;
+}
+
+.my-table tbody tr td:nth-child(2),
+.my-table tbody tr td:nth-child(3) {
+    min-width: 210px;
+    max-width: 210px;
+}
+
+
+.thumbnail {
+    position: relative;
+    width: 100%;
+    height: 125px;
+    border-radius: 10px;
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+}
+
+.thumbnail .favorite {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.thumbnail .status {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.thumbnail .bottom-bar {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.thumbnail .bottom-bar .picture {
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.thumbnail .bottom-bar .map {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.rent_bg,
+.sale_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.special_char {
+    padding: 0 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    font-size: 90%;
+    width: fit-content;
+}
+
+.comment-box {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #CED4DA;
+    height: 100px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    width: 220px;
+    overflow-y: auto;
+}
+
+.trash-btn {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    border: 1px solid #CED4DA;
+    background-color: white;
+    cursor: pointer;
+}
+
+.comment-profile {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image: url('/assets/images/thumbnail.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.comment-btn {
+    height: 35px;
+    border-radius: 10px;
+    background-color: #00BAC7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    font-size: 110%;
+    cursor: pointer;
+}
+
+.comment-box:empty::before {
+    content: 'Type something….';
+}
+
+.bg-main {
+    background-color: #00BAC7;
+}
+
+.sale-btn,
+.rent-btn {
+    width: 100%;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    cursor: pointer;
+    transition: .3s ease 0s;
+}
+
+.sale-btn.active,
+.rent-btn.active {
+    background-color: #00BAC7;
+    color: white;
+}
+
+@media screen and (max-width: 991px) {
+    .rented{
+        width: fit-content;
+        margin-left: auto;
+    }
+    .thumbnail {
+        width: 230px;
+        height: 150px;
+    }
+
+    .my-table {
+        border: 0;
+    }
+
+    .my-table tbody tr td:nth-child(1),
+    .my-table tbody tr td:nth-child(2),
+    .my-table tbody tr td:nth-child(3) {
+        width: unset;
+        max-width: unset;
+    }
+
+
+    .my-table thead {
+        display: none;
+    }
+
+    .my-table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .my-table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .my-table td:first-child,
+    .my-table td:not(:nth-child(9), :nth-child(5)) div {
+        text-align: start;
+    }
+
+    .my-table td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a .my-table
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-right: 1rem;
+    }
+
+    .my-table td:last-child {
+        border-bottom: 0;
+    }
+}

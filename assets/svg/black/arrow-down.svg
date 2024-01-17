@@ -1,0 +1,11 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="arrow down">
+<rect id="arrow down_2" width="24" height="24" rx="5" fill="white"/>
+<mask id="mask0_117_8016" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect id="arrow down_3" width="24" height="24" rx="5" fill="white"/>
+</mask>
+<g mask="url(#mask0_117_8016)">
+<path id="arrow down_4" d="M11.9999 15.7122L18.0103 9.70181L16.5961 8.2876L11.9999 12.8838L7.40372 8.2876L5.9895 9.70181L11.9999 15.7122Z" fill="#0E2338"/>
+</g>
+</g>
+</svg>

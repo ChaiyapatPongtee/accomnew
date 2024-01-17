@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/new_listing/photo_vdo.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="h-screen d-flex overflow-hidden">
+        <div class="nav-menu active" id="nav-menu">
+            <nav class="nav-bar">
+                <img src="/assets/svg/logo.svg" alt="" class="logo">
+                <hr class="w-100 bg-secondary m-0">
+                <ul class="p-0">
+                    <li data-toggle="tooltip" id="nav-menu" data-bs-custom-class="custom-tooltip"
+                        data-bs-toggle="tooltip" data-bs-placement="right" title="Agent Search"
+                        onclick="location.replace('/agent_search.html')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.6144 15.5134C20.626 11.4028 19.9641 5.66631 16.0954 2.34956C12.2264 -0.967443 6.45548 -0.745081 2.85317 2.85981C-0.749146 6.4647 -0.967379 12.2358 2.3524 16.1024C5.67191 19.9688 11.4089 20.6265 15.5173 17.612C15.5622 17.6717 15.61 17.7285 15.6638 17.7838L21.4385 23.5585C22.0242 24.1446 22.9741 24.145 23.5602 23.5593C24.1463 22.9736 24.1466 22.0237 23.561 21.4376L17.7862 15.6629C17.7328 15.6088 17.6753 15.5588 17.6144 15.5134ZM13.8758 16.893C16.4283 15.4194 18.0007 12.6959 18.0007 9.74858C18.0007 5.19241 14.3072 1.4989 9.751 1.4989C5.19483 1.4989 1.50132 5.19241 1.50132 9.74858C1.50132 12.6959 3.0737 15.4194 5.62616 16.893C8.17862 18.3667 11.3234 18.3667 13.8758 16.893Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li onclick="openMenu(0,this)" id="nav-menu" class="active" data-toggle="tooltip"
+                        data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-placement="right"
+                        title="Property Base">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M23.6208 0.114018C23.8564 0.250613 23.9999 0.491749 24 0.751433V23.2484C24 23.6626 23.6418 23.9983 23.2 23.9983H18.4C17.9582 23.9983 17.6 23.6626 17.6 23.2484V20.9987H16V23.2484C16 23.6626 15.6418 23.9983 15.2 23.9983H0.8C0.358172 23.9983 0 23.6626 0 23.2484V14.9995C0.00026134 14.6769 0.220645 14.3906 0.5472 14.2886L9.6 11.46V6.75063C9.60001 6.46684 9.77093 6.20736 10.0416 6.08022L22.8416 0.0810227C23.0898 -0.0354527 23.3848 -0.0229642 23.6208 0.114018ZM9.59998 13.0408L1.59998 15.5395V22.4985H9.59998V13.0408ZM14.4 22.4985H11.2V7.21404L22.4 1.96474V22.4985H19.2V20.2488C19.2 19.8346 18.8418 19.4989 18.4 19.4989H15.2C14.7581 19.4989 14.4 19.8346 14.4 20.2488V22.4985Z"
+                                fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.8696 4.80103H19.257V6.28466H20.8696V4.80103ZM12.8064 7.76789H14.419V9.25152H12.8064V7.76789ZM14.419 10.7347H12.8064V12.2183H14.419V10.7347ZM14.419 13.7016H12.8064V15.1852H14.419V13.7016ZM3.13049 16.6685H4.74314V18.1521H3.13049V16.6685ZM6.35583 16.6685H7.96848V18.1521H6.35583V16.6685ZM4.74314 19.6353H3.13049V21.1189H4.74314V19.6353ZM6.35583 19.6353H7.96848V21.1189H6.35583V19.6353ZM16.0317 13.7016H17.6444V15.1852H16.0317V13.7016ZM14.419 16.6685H12.8064V18.1521H14.419V16.6685ZM16.0317 16.6685H17.6444V18.1521H16.0317V16.6685ZM20.8696 13.7016H19.257V15.1852H20.8696V13.7016ZM19.257 16.6685H20.8696V18.1521H19.257V16.6685ZM16.0317 10.7347H17.6444V12.2183H16.0317V10.7347ZM20.8696 10.7347H19.257V12.2183H20.8696V10.7347ZM17.6444 7.76789H16.0317V9.25152H17.6444V7.76789ZM19.257 7.76789H20.8696V9.25152H19.257V7.76789Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li onclick="openMenu(1,this)" id="nav-menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.604 11.0482C17.2131 10.0104 17.4761 8.80583 17.355 7.60869C17.176 5.82494 16.18 4.24816 14.552 3.16931L13.447 4.83508C14.566 5.57697 15.247 6.63382 15.365 7.80866C15.4194 8.35468 15.3514 8.90596 15.166 9.42241C14.9806 9.93887 14.6823 10.4075 14.293 10.7942L13.101 11.9861L14.719 12.461C18.951 13.7008 19 17.9562 19 17.9992H21C21 16.2105 20.044 12.715 16.604 11.0482Z"
+                                fill="currentColor" />
+                            <path
+                                d="M9.5 12C11.706 12 13.5 10.2062 13.5 8.00054C13.5 5.79485 11.706 4.0011 9.5 4.0011C7.294 4.0011 5.5 5.79485 5.5 8.00054C5.5 10.2062 7.294 12 9.5 12ZM9.5 6.00082C10.603 6.00082 11.5 6.89769 11.5 8.00054C11.5 9.10338 10.603 10.0003 9.5 10.0003C8.397 10.0003 7.5 9.10338 7.5 8.00054C7.5 6.89769 8.397 6.00082 9.5 6.00082ZM11 12.9998H8C4.691 12.9998 2 15.6905 2 18.999V19.9988H4V18.999C4 16.7933 5.794 14.9996 8 14.9996H11C13.206 14.9996 15 16.7933 15 18.999V19.9988H17V18.999C17 15.6905 14.309 12.9998 11 12.9998Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li id="nav-menu">
+                        <div class="menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.988 2.01343L21.988 5.01301L19.701 7.30068L16.701 4.30111L18.988 2.01343ZM8 15.9995H11L18.287 8.71349L15.287 5.71391L8 12.9999V15.9995Z"
+                                    fill="currentColor" />
+                                <path
+                                    d="M19 18.9991H8.158C8.132 18.9991 8.105 19.0091 8.079 19.0091C8.046 19.0091 8.013 19.0001 7.979 18.9991H5V5.00106H11.847L13.847 3.00134H5C3.897 3.00134 3 3.89722 3 5.00106V18.9991C3 20.1029 3.897 20.9988 5 20.9988H19C19.5304 20.9988 20.0391 20.7881 20.4142 20.4131C20.7893 20.0381 21 19.5295 21 18.9991V10.3323L19 12.332V18.9991Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div class="modal-menu" id="document-menu">
+                            <h5 class="m-0">Document</h5>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">Agreement</h5>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="p-0 mt-auto">
+                    <li>
+                        <a href="/">
+                            <img src="/assets/svg/primary/grid-4.svg" alt="" width="24">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="menu" onclick="toggleMenu('setting-menu')">
+                            <img src="/assets/svg/primary/setting.svg" alt="" width="24">
+                        </div>
+                        <div class="modal-menu" id="setting-menu">
+                            <h5 class="m-0">Setting</h5>
+                            <a class="d-flex align-items-center gap-3 justify-content-start" href="/user.html">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">User</h5>
+                            </a>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">User Permission</h5>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">Location</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <img src="/assets/svg/primary/bell-fill.svg" alt="" width="24">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/my_profile.html">
+                            <div class="profile">K</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-bar-menu">
+                <div class="more" id="more-btn" onclick="toggleNav()">
+                    <img src="/assets/svg/gray/arrow-left.svg" alt="" class="arrow-icon">
+                    <div class="d-flex flex-column w-50 line-box" style="gap: 3px;">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="menu-content" id="menu-content">
+                    <div class="title-nav">
+                        <img src="/assets/svg/bxs_edit.svg" alt="">
+                        <h5 class="m-0 fw-bold">Property Base</h5>
+                    </div>
+                    <div class="accordion" id="document-menu">
+                        <div class="accordion-item border-0 box">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Add new listing
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <ul class="nav-bar-menu-list">
+                                    <li>
+                                        <a href="/new_listing/unit_description.html">Unit Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/address_map.html">Address - Map</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/special_character.html">Special Character</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="/new_listing/photo_vdo.html">Photo & VDO</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/add_contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- แบบ ไม่มี sub menu -->
+                    <a class="single-link" href="/agent_base.html">My Listing</a>
+                </div>
+                <div class="menu-content d-none" id="menu-content">
+                    <div class="title-nav">
+                        <img src="/assets/svg/bxs_edit.svg" alt="">
+                        <h5 class="m-0 fw-bold">Document</h5>
+                    </div>
+                    <div class="accordion" id="document-menu">
+                        <div class="accordion-item border-0 box">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Menu 1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <ul class="nav-bar-menu-list">
+                                    <li class="active">
+                                        <a href="/new_listing/unit_description.html">Unit Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/address_map.html">Address - Map</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/special_character.html">Special Character</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/photo_vdo.html">Photo & VDO</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/add_contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- แบบ ไม่มี sub menu -->
+                    <a class="single-link" href="/agent_base.html">My Listing</a>
+                </div>
+            </div>
+            <div class="bg" onclick="toggleNav()"></div>
+        </div>
+        <div class="page">
+            <div class="head rounded-0">
+                <h5 class="m-0">Add new listing</h5>
+            </div>
+            <div class="bg-white pt-3 px-3 shadow-sm">
+                <div class="d-flex flex-sm-row flex-column align-items-sm-center gap-3 justify-content-sm-end">
+                    <div class="rounded-btn me-sm-auto" onclick="history.back()">
+                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.22 0L0.219999 5V6.4L5.22 11.4L6.64 10L3.36 6.7H14.5V4.7H3.36L6.66 1.4L5.22 0Z"
+                                fill="#001A53" />
+                        </svg>
+                        <div>Back</div>
+                    </div>
+                    <div class="rounded-btn">
+                        <div>Save & Exit</div>
+                    </div>
+                    <a class="rounded-btn bg-orange" href="/new_listing/add_contact.html">
+                        <div>Save & Next</div>
+                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.28 0L14.28 5V6.4L9.28 11.4L7.86 10L11.14 6.7H0V4.7H11.14L7.84 1.4L9.28 0Z"
+                                fill="white" />
+                        </svg>
+
+                    </a>
+                </div>
+                <ul class="tabs mt-3">
+                    <li><a href="/new_listing/unit_description.html">Unit Description</a></li>
+                    <li><a href="/new_listing/address_map.html">Address - Map</a></li>
+                    <li><a href="/new_listing/special_character.html">Special Character</a></li>
+                    <li class="active"><a href="/new_listing/photo_vdo.html">Photo & VDO</a></li>
+                    <li><a href="/new_listing/add_contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column gap-3 p-3">
+                <div class="d-flex align-items-center gap-3 position-relative">
+                    <div class="icon-box">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.8889 2.11111V16.8889H3.11111V2.11111H17.8889ZM17.8889 0H3.11111C1.95 0 1 0.95 1 2.11111V16.8889C1 18.05 1.95 19 3.11111 19H17.8889C19.05 19 20 18.05 20 16.8889V2.11111C20 0.95 19.05 0 17.8889 0ZM12.7589 9.35222L9.59222 13.4372L7.33333 10.7033L4.16667 14.7778H16.8333L12.7589 9.35222Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <h5 class="m-0">Photo & VDO</h5>
+                    <div class="line-detail">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="bg-white d-flex flex-column gap-4 p-3 rounded-3 shadow">
+                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                        <h6 class="m-0">VDO :</h6>
+                        <div class="form-input border flex-fill">
+                            <input type="text" name="" id="" placeholder="Insert Name Of VDO :">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-3">
+                        <h6 class="m-0">Photos :</h6>
+                        <div class="drag" ondrop="uploadFile(event)" onclick="browse()">
+                            <img src="/assets/images/clarity_upload-cloud-line.png" alt="">
+                            <h5 class="m-0">
+                                Drag & drop files or <span style="color: #FD8A02;">Browse</span>
+                            </h5>
+                            <small class="text-secondary">Supported formates: JPEG, PNG</small>
+                        </div>
+                        <input type="file" class="d-none" id="file" onchange="uploadFile(event)">
+                    </div>
+                    <div class="d-flex align-items-center gap-3 overflow-x-auto">
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/image 6.png" alt="">
+                            </div>
+                            <div class="underline">Remove file</div>
+                        </div>
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/image 6.png" alt="">
+                            </div>
+                            <div class="underline">Remove file</div>
+                        </div>
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/image 6.png" alt="">
+                            </div>
+                            <div class="underline">Remove file</div>
+                        </div>
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/image 6.png" alt="">
+                            </div>
+                            <div class="underline">Remove file</div>
+                        </div>
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/image 6.png" alt="">
+                            </div>
+                            <div class="underline">Remove file</div>
+                        </div>
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/image 6.png" alt="">
+                            </div>
+                            <div class="underline">Remove file</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/nav.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/new_listing/photo_vdo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+.page-content{
+    display: grid;
+    place-items: center;
+    flex-grow: 1;
+}
+
+.line-detail{
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    z-index: 1;
+}
+
+.line-detail div:first-child{
+    width: 100%;
+    height: 5px;
+    background-color: #F6E05E;
+    border-radius: 50px;
+}
+
+.line-detail div:nth-child(2){
+    background: linear-gradient(71.87deg, #FD8A02 4.95%, #E6A000 78.48%);
+    width: 40%;
+    height: 5px;
+    border-radius: 50px;
+}
+
+.page-head{
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #0E2338;
+    color: white;
+}
+
+.profile-box{
+    display: flex;
+    gap: 15px;
+}
+
+.profile-box .profile{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-box .img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-box .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-box .profile .verify{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    background: #00BAC729;
+    border-radius: 50px;
+    color: #3699E7;
+    width: fit-content;
+}
+
+
+.rounded-btn{
+    padding: 10px 25px;
+    height: 40px;
+    border: 1px solid #D7D7D7;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    gap: 15px;
+}
+
+.rounded-btn.bg-orange{
+    background: linear-gradient(71.87deg, #FD8A02 4.95%, #E6A000 78.48%);
+    color: white;
+    border: none;
+}
+
+.text-red{
+    color: #FF0F00;
+}
+
+.tip-box{
+    padding: 10px;
+    border-radius: 10px;
+    background: #00BAC714;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="d-flex justify-content-center">
+    <div class="background">
+      <div class="position-relative text-center">
+        <img src="/assets/svg/logo.svg" alt="Logo">
+        <h2 class="text-white">ยินดีต้อนรับ</h2>
+        <h2 class="text-white">AccomAsia Member.com</h2>
+        <div class="container-box text-black">
+          <div class="d-flex">
+            <h2 class="underline">เข้า</h2>
+            <h2>สู่ระบบ</h2>
+          </div>
+          <div class="d-flex flex-column gap-3">
+            <div class="form-input gray">
+              <div class="icon">
+                <img src="/assets/svg/gray/mail.svg" alt="" width="25px">
+              </div>
+              <input type="email" id="email" placeholder="อีเมล">
+            </div>
+            <div class="form-input gray">
+              <input type="password" id="password" placeholder="รหัสผ่าน">
+              <img src="/assets/svg/gray/eyes_close.svg" id="eyes_close" alt="" width="25px" onclick="toggleEyes();">
+              <img src="/assets/svg/gray/eyes_open.svg" id="eyes_open" class="d-none" alt="" width="25px" onclick="toggleEyes();">
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <input type="checkbox" /><label class="text-white">จดจำรหัสผ่าน</label>
+            </div>
+            <div class="flex-fill">
+              <a class="login-box gap-2" href="/agent_search.html">
+                <div class="text-white">เข้าสู่ระบบ</div>
+                <img src="/assets/svg/white/arrow-right.svg" alt="">
+              </a>
+              <div class="forget-text mt-3">
+                <a href="/forgetpass.html">ลืมรหัสผ่าน ?</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/login.js"></script>
+</body>
+
+</html>

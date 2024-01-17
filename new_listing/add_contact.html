@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/new_listing/add_contact.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="h-screen d-flex overflow-hidden">
+        <div class="nav-menu active" id="nav-menu">
+            <nav class="nav-bar">
+                <img src="/assets/svg/logo.svg" alt="" class="logo">
+                <hr class="w-100 bg-secondary m-0">
+                <ul class="p-0">
+                    <li data-toggle="tooltip" id="nav-menu" data-bs-custom-class="custom-tooltip"
+                        data-bs-toggle="tooltip" data-bs-placement="right" title="Agent Search"
+                        onclick="location.replace('/agent_search.html')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.6144 15.5134C20.626 11.4028 19.9641 5.66631 16.0954 2.34956C12.2264 -0.967443 6.45548 -0.745081 2.85317 2.85981C-0.749146 6.4647 -0.967379 12.2358 2.3524 16.1024C5.67191 19.9688 11.4089 20.6265 15.5173 17.612C15.5622 17.6717 15.61 17.7285 15.6638 17.7838L21.4385 23.5585C22.0242 24.1446 22.9741 24.145 23.5602 23.5593C24.1463 22.9736 24.1466 22.0237 23.561 21.4376L17.7862 15.6629C17.7328 15.6088 17.6753 15.5588 17.6144 15.5134ZM13.8758 16.893C16.4283 15.4194 18.0007 12.6959 18.0007 9.74858C18.0007 5.19241 14.3072 1.4989 9.751 1.4989C5.19483 1.4989 1.50132 5.19241 1.50132 9.74858C1.50132 12.6959 3.0737 15.4194 5.62616 16.893C8.17862 18.3667 11.3234 18.3667 13.8758 16.893Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li onclick="openMenu(0,this)" id="nav-menu" class="active" data-toggle="tooltip"
+                        data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-placement="right"
+                        title="Property Base">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M23.6208 0.114018C23.8564 0.250613 23.9999 0.491749 24 0.751433V23.2484C24 23.6626 23.6418 23.9983 23.2 23.9983H18.4C17.9582 23.9983 17.6 23.6626 17.6 23.2484V20.9987H16V23.2484C16 23.6626 15.6418 23.9983 15.2 23.9983H0.8C0.358172 23.9983 0 23.6626 0 23.2484V14.9995C0.00026134 14.6769 0.220645 14.3906 0.5472 14.2886L9.6 11.46V6.75063C9.60001 6.46684 9.77093 6.20736 10.0416 6.08022L22.8416 0.0810227C23.0898 -0.0354527 23.3848 -0.0229642 23.6208 0.114018ZM9.59998 13.0408L1.59998 15.5395V22.4985H9.59998V13.0408ZM14.4 22.4985H11.2V7.21404L22.4 1.96474V22.4985H19.2V20.2488C19.2 19.8346 18.8418 19.4989 18.4 19.4989H15.2C14.7581 19.4989 14.4 19.8346 14.4 20.2488V22.4985Z"
+                                fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.8696 4.80103H19.257V6.28466H20.8696V4.80103ZM12.8064 7.76789H14.419V9.25152H12.8064V7.76789ZM14.419 10.7347H12.8064V12.2183H14.419V10.7347ZM14.419 13.7016H12.8064V15.1852H14.419V13.7016ZM3.13049 16.6685H4.74314V18.1521H3.13049V16.6685ZM6.35583 16.6685H7.96848V18.1521H6.35583V16.6685ZM4.74314 19.6353H3.13049V21.1189H4.74314V19.6353ZM6.35583 19.6353H7.96848V21.1189H6.35583V19.6353ZM16.0317 13.7016H17.6444V15.1852H16.0317V13.7016ZM14.419 16.6685H12.8064V18.1521H14.419V16.6685ZM16.0317 16.6685H17.6444V18.1521H16.0317V16.6685ZM20.8696 13.7016H19.257V15.1852H20.8696V13.7016ZM19.257 16.6685H20.8696V18.1521H19.257V16.6685ZM16.0317 10.7347H17.6444V12.2183H16.0317V10.7347ZM20.8696 10.7347H19.257V12.2183H20.8696V10.7347ZM17.6444 7.76789H16.0317V9.25152H17.6444V7.76789ZM19.257 7.76789H20.8696V9.25152H19.257V7.76789Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li onclick="openMenu(1,this)" id="nav-menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.604 11.0482C17.2131 10.0104 17.4761 8.80583 17.355 7.60869C17.176 5.82494 16.18 4.24816 14.552 3.16931L13.447 4.83508C14.566 5.57697 15.247 6.63382 15.365 7.80866C15.4194 8.35468 15.3514 8.90596 15.166 9.42241C14.9806 9.93887 14.6823 10.4075 14.293 10.7942L13.101 11.9861L14.719 12.461C18.951 13.7008 19 17.9562 19 17.9992H21C21 16.2105 20.044 12.715 16.604 11.0482Z"
+                                fill="currentColor" />
+                            <path
+                                d="M9.5 12C11.706 12 13.5 10.2062 13.5 8.00054C13.5 5.79485 11.706 4.0011 9.5 4.0011C7.294 4.0011 5.5 5.79485 5.5 8.00054C5.5 10.2062 7.294 12 9.5 12ZM9.5 6.00082C10.603 6.00082 11.5 6.89769 11.5 8.00054C11.5 9.10338 10.603 10.0003 9.5 10.0003C8.397 10.0003 7.5 9.10338 7.5 8.00054C7.5 6.89769 8.397 6.00082 9.5 6.00082ZM11 12.9998H8C4.691 12.9998 2 15.6905 2 18.999V19.9988H4V18.999C4 16.7933 5.794 14.9996 8 14.9996H11C13.206 14.9996 15 16.7933 15 18.999V19.9988H17V18.999C17 15.6905 14.309 12.9998 11 12.9998Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li id="nav-menu">
+                        <div class="menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.988 2.01343L21.988 5.01301L19.701 7.30068L16.701 4.30111L18.988 2.01343ZM8 15.9995H11L18.287 8.71349L15.287 5.71391L8 12.9999V15.9995Z"
+                                    fill="currentColor" />
+                                <path
+                                    d="M19 18.9991H8.158C8.132 18.9991 8.105 19.0091 8.079 19.0091C8.046 19.0091 8.013 19.0001 7.979 18.9991H5V5.00106H11.847L13.847 3.00134H5C3.897 3.00134 3 3.89722 3 5.00106V18.9991C3 20.1029 3.897 20.9988 5 20.9988H19C19.5304 20.9988 20.0391 20.7881 20.4142 20.4131C20.7893 20.0381 21 19.5295 21 18.9991V10.3323L19 12.332V18.9991Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div class="modal-menu" id="document-menu">
+                            <h5 class="m-0">Document</h5>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">Agreement</h5>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="p-0 mt-auto">
+                    <li>
+                        <a href="/">
+                            <img src="/assets/svg/primary/grid-4.svg" alt="" width="24">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="menu" onclick="toggleMenu('setting-menu')">
+                            <img src="/assets/svg/primary/setting.svg" alt="" width="24">
+                        </div>
+                        <div class="modal-menu" id="setting-menu">
+                            <h5 class="m-0">Setting</h5>
+                            <a class="d-flex align-items-center gap-3 justify-content-start" href="/user.html">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">User</h5>
+                            </a>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">User Permission</h5>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">Location</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <img src="/assets/svg/primary/bell-fill.svg" alt="" width="24">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/my_profile.html">
+                            <div class="profile">K</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-bar-menu">
+                <div class="more" id="more-btn" onclick="toggleNav()">
+                    <img src="/assets/svg/gray/arrow-left.svg" alt="" class="arrow-icon">
+                    <div class="d-flex flex-column w-50 line-box" style="gap: 3px;">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="menu-content" id="menu-content">
+                    <div class="title-nav">
+                        <img src="/assets/svg/bxs_edit.svg" alt="">
+                        <h5 class="m-0 fw-bold">Property Base</h5>
+                    </div>
+                    <div class="accordion" id="document-menu">
+                        <div class="accordion-item border-0 box">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Add new listing
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <ul class="nav-bar-menu-list">
+                                    <li>
+                                        <a href="/new_listing/unit_description.html">Unit Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/address_map.html">Address - Map</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/special_character.html">Special Character</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/photo_vdo.html">Photo & VDO</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="/new_listing/add_contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- แบบ ไม่มี sub menu -->
+                    <a class="single-link" href="/agent_base.html">My Listing</a>
+                </div>
+                <div class="menu-content d-none" id="menu-content">
+                    <div class="title-nav">
+                        <img src="/assets/svg/bxs_edit.svg" alt="">
+                        <h5 class="m-0 fw-bold">Document</h5>
+                    </div>
+                    <div class="accordion" id="document-menu">
+                        <div class="accordion-item border-0 box">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Menu 1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <ul class="nav-bar-menu-list">
+                                    <li class="active">
+                                        <a href="/new_listing/unit_description.html">Unit Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/address_map.html">Address - Map</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/special_character.html">Special Character</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/photo_vdo.html">Photo & VDO</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/add_contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- แบบ ไม่มี sub menu -->
+                    <a class="single-link" href="/agent_base.html">My Listing</a>
+                </div>
+            </div>
+            <div class="bg" onclick="toggleNav()"></div>
+        </div>
+        <div class="page">
+            <div class="head rounded-0">
+                <h5 class="m-0">Add new listing</h5>
+            </div>
+            <div class="bg-white pt-3 px-3 shadow-sm">
+                <div class="d-flex flex-sm-row flex-column align-items-sm-center gap-3 justify-content-sm-end">
+                    <div class="rounded-btn me-sm-auto" onclick="history.back()">
+                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.22 0L0.219999 5V6.4L5.22 11.4L6.64 10L3.36 6.7H14.5V4.7H3.36L6.66 1.4L5.22 0Z"
+                                fill="#001A53" />
+                        </svg>
+                        <div>Back</div>
+                    </div>
+                    <div class="rounded-btn">
+                        <div>Save & Exit</div>
+                    </div>
+                    <div class="rounded-btn bg-orange" data-bs-toggle="modal" data-bs-target="#req_project">
+                        <div>Save & Next</div>
+                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.28 0L14.28 5V6.4L9.28 11.4L7.86 10L11.14 6.7H0V4.7H11.14L7.84 1.4L9.28 0Z"
+                                fill="white" />
+                        </svg>
+
+                    </div>
+                </div>
+                <ul class="tabs mt-3">
+                    <li><a href="/new_listing/unit_description.html">Unit Description</a></li>
+                    <li><a href="/new_listing/address_map.html">Address - Map</a></li>
+                    <li><a href="/new_listing/special_character.html">Special Character</a></li>
+                    <li><a href="/new_listing/photo_vdo.html">Photo & VDO</a></li>
+                    <li class="active"><a href="/new_listing/add_contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column gap-3 p-3">
+                <div class="d-flex align-items-center gap-3 position-relative">
+                    <div class="icon-box">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.4286 8.35497C11.4287 8.54267 11.3919 8.72856 11.3202 8.90202C11.2485 9.07548 11.1433 9.23312 11.0107 9.36594C10.8781 9.49876 10.7206 9.60416 10.5472 9.67612C10.3739 9.74808 10.1881 9.78519 10.0004 9.78533C9.81266 9.78547 9.62678 9.74864 9.45332 9.67694C9.27985 9.60524 9.12221 9.50008 8.98939 9.36746C8.85657 9.23484 8.75117 9.07735 8.67921 8.904C8.60725 8.73064 8.57014 8.54481 8.57 8.35712C8.56972 7.97804 8.72003 7.61439 8.98787 7.34614C9.25572 7.0779 9.61915 6.92704 9.99822 6.92676C10.3773 6.92647 10.7409 7.07679 11.0092 7.34463C11.2774 7.61247 11.4283 7.9759 11.4286 8.35497ZM12.5 11.0807V11.4664C12.5 12.2414 11.4357 12.8214 10 12.8214C8.56429 12.8214 7.5 12.2407 7.5 11.4671V11.0807C7.49972 11.0046 7.51443 10.9293 7.54329 10.8589C7.57215 10.7886 7.6146 10.7246 7.6682 10.6707C7.7218 10.6168 7.78551 10.5739 7.85568 10.5446C7.92585 10.5153 8.00111 10.5002 8.07715 10.5H11.9236C11.9996 10.5003 12.0747 10.5155 12.1448 10.5448C12.2149 10.5742 12.2785 10.617 12.3321 10.6709C12.3856 10.7249 12.428 10.7888 12.4568 10.8591C12.4856 10.9294 12.5003 11.0047 12.5 11.0807Z"
+                                fill="white" />
+                            <path
+                                d="M5.5353 2.28564C4.91961 2.28564 4.32915 2.53022 3.8938 2.96558C3.45845 3.40093 3.21387 3.99139 3.21387 4.60707V16.3928C3.21387 17.0085 3.45845 17.5989 3.8938 18.0343C4.32915 18.4696 4.91961 18.7142 5.5353 18.7142H16.2496C16.3917 18.7142 16.5279 18.6578 16.6284 18.5573C16.7289 18.4568 16.7853 18.3206 16.7853 18.1785C16.7853 18.0364 16.7289 17.9002 16.6284 17.7997C16.5279 17.6992 16.3917 17.6428 16.2496 17.6428H5.5353C5.23472 17.6428 4.94421 17.5345 4.717 17.3377C4.48979 17.1409 4.34109 16.8689 4.29815 16.5714H16.2496C16.3917 16.5714 16.5279 16.5149 16.6284 16.4145C16.7289 16.314 16.7853 16.1777 16.7853 16.0356V4.60707C16.7853 3.99139 16.5407 3.40093 16.1054 2.96558C15.67 2.53022 15.0795 2.28564 14.4639 2.28564H5.5353ZM15.7139 4.60707V15.4999H4.2853V4.60707C4.2853 3.91707 4.8453 3.35707 5.5353 3.35707H14.4639C15.1546 3.35707 15.7139 3.91707 15.7139 4.60707Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <h5 class="m-0">Add Contact</h5>
+                    <div class="line-detail">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="bg-white d-flex flex-column gap-4 p-3 rounded-3 shadow">
+                    <div class="d-flex gap-3 align-items-center flex-wrap">
+                        <div class="form-input border">
+                            <img src="/assets/svg/black/phone.svg" alt="">
+                            <input type="text" name="" id="" placeholder="ค้นหา contact name/ email / phone">
+                            <div class="icon-primary">
+                                <img src="/assets/svg/white/search-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="rounded-btn bg-primary ms-md-auto" data-bs-toggle="modal"
+                            data-bs-target="#create_contact">Create Contact</div>
+                    </div>
+
+                    <!-- ถ้ามีข้อมูล -->
+                    <div class="d-flex align-items-center gap-3">
+                        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.1212 15.3969C16.679 14.3496 16.0374 13.3984 15.2321 12.5961C14.4292 11.7915 13.4781 11.15 12.4313 10.707C12.4219 10.7023 12.4126 10.7 12.4032 10.6953C13.8633 9.64062 14.8126 7.92266 14.8126 5.98438C14.8126 2.77344 12.211 0.171875 9.00006 0.171875C5.78912 0.171875 3.18756 2.77344 3.18756 5.98438C3.18756 7.92266 4.13678 9.64062 5.59693 10.6977C5.58756 10.7023 5.57818 10.7047 5.56881 10.7094C4.51881 11.1523 3.57662 11.7875 2.76803 12.5984C1.96344 13.4013 1.32194 14.3524 0.878965 15.3992C0.443782 16.424 0.209079 17.5228 0.187559 18.6359C0.186933 18.661 0.191321 18.6858 0.200463 18.7091C0.209605 18.7324 0.223317 18.7537 0.240791 18.7716C0.258264 18.7895 0.279146 18.8037 0.302206 18.8134C0.325265 18.8231 0.350036 18.8281 0.375059 18.8281H1.78131C1.88443 18.8281 1.96646 18.7461 1.96881 18.6453C2.01568 16.8359 2.74225 15.1414 4.02662 13.857C5.35553 12.5281 7.12037 11.7969 9.00006 11.7969C10.8797 11.7969 12.6446 12.5281 13.9735 13.857C15.2579 15.1414 15.9844 16.8359 16.0313 18.6453C16.0337 18.7484 16.1157 18.8281 16.2188 18.8281H17.6251C17.6501 18.8281 17.6749 18.8231 17.6979 18.8134C17.721 18.8037 17.7419 18.7895 17.7593 18.7716C17.7768 18.7537 17.7905 18.7324 17.7997 18.7091C17.8088 18.6858 17.8132 18.661 17.8126 18.6359C17.7891 17.5156 17.5571 16.4258 17.1212 15.3969ZM9.00006 10.0156C7.92428 10.0156 6.91178 9.59609 6.15006 8.83438C5.38834 8.07266 4.96881 7.06016 4.96881 5.98438C4.96881 4.90859 5.38834 3.89609 6.15006 3.13437C6.91178 2.37266 7.92428 1.95312 9.00006 1.95312C10.0758 1.95312 11.0883 2.37266 11.8501 3.13437C12.6118 3.89609 13.0313 4.90859 13.0313 5.98438C13.0313 7.06016 12.6118 8.07266 11.8501 8.83438C11.0883 9.59609 10.0758 10.0156 9.00006 10.0156Z"
+                                fill="url(#paint0_linear_171_27294)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_171_27294" x1="-2.75002" y1="5.58219" x2="12.9495"
+                                    y2="0.727255" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FD8A02" />
+                                    <stop offset="1" stop-color="#E6A000" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>Contact Person</div>
+                    </div>
+                    <table class="my-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>E-mail</th>
+                                <th>Telephone</th>
+                                <th>Position</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cameron Williamson</td>
+                                <td>cameron.on@example.com</td>
+                                <td>086 234 8402</td>
+                                <td>
+                                    <div class="pos">Owner</div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="icon-white" onclick="favorite()">
+                                            <img src="/assets/svg/yellow/star.svg" class="d-none" alt=""
+                                                id="star-yellow">
+                                            <img src="/assets/svg/gray/star.svg" alt="" id="star-gray">
+                                        </div>
+                                        <div class="icon-white">
+                                            <img src="/assets/svg/akar-icons_pencil.svg" alt="">
+                                        </div>
+                                        <div class="icon-white">
+                                            <img src="/assets/svg/black/more.svg" alt="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- ไม่เจอข้อมูล -->
+                    <div class="not-found">
+                        <img src="/assets/images/search.png" alt="">
+                        <h4 class="m-0">Not found</h4>
+                        <div class="text-secondary">We couldn’t find what you’re looking for</div>
+                    </div>
+                </div>
+
+                <div class="bg-white d-flex flex-column p-3 rounded-3 shadow">
+                    <div class="d-flex align-items-center gap-3">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 4C12.145 4 9 7.145 9 11C9 13.379 10.21 15.484 12.031 16.75C7.926 18.352 5 22.352 5 27H7C7 22.602 10.191 18.926 14.375 18.156L15 20H17L17.625 18.156C21.809 18.926 25 22.602 25 27H27C27 22.352 24.074 18.352 19.969 16.75C21.789 15.484 23 13.379 23 11C23 7.145 19.855 4 16 4ZM16 6C18.773 6 21 8.227 21 11C21 13.773 18.773 16 16 16C13.227 16 11 13.773 11 11C11 8.227 13.227 6 16 6ZM15 21L14 27H18L17 21H15Z"
+                                fill="url(#paint0_linear_171_27392)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_171_27392" x1="1.33333" y1="10.67" x2="20.8868"
+                                    y2="4.54777" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FD8A02" />
+                                    <stop offset="1" stop-color="#E6A000" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>Owner name</div>
+                    </div>
+                    <table class="my-table">
+                        <tbody>
+                            <tr>
+                                <td>Cameron Williamson</td>
+                                <td>cameron.on@example.com</td>
+                                <td>086 234 8402</td>
+                                <td>
+                                    <div class="pos">Owner</div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="icon-white" onclick="favorite()">
+                                            <img src="/assets/svg/yellow/star.svg" class="d-none" alt=""
+                                                id="star-yellow">
+                                            <img src="/assets/svg/gray/star.svg" alt="" id="star-gray">
+                                        </div>
+                                        <div class="icon-white">
+                                            <img src="/assets/svg/akar-icons_pencil.svg" alt="">
+                                        </div>
+                                        <div class="icon-white">
+                                            <img src="/assets/svg/black/more.svg" alt="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="create_contact" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <h5 class="m-0 fw-bold">Create Contact</h5>
+                        <h6 class="m-0 text-secondary">Please fill information</h6>
+                    </div>
+                    <div class="border d-grid" style="place-items: center;width: 35px;height: 35px;border-radius: 5px;">
+                        <button type="button" class="btn-close m-0 p-0" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex flex-column gap-3">
+                        <div class="d-flex flex-column gap-2">
+                            <small class="text-secondary">Contact Name</small>
+                            <div class="form-input border">
+                                <img src="/assets/svg/gray/PeopleOutlineRounded.svg" alt="">
+                                <input type="text" placeholder="Name - Last Name">
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <small class="text-secondary">Email</small>
+                            <div class="form-input border">
+                                <img src="/assets/svg/gray/mail.svg" alt="">
+                                <input type="text" placeholder="Email">
+                                <div class="plus-btn"></div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex flex-column gap-2">
+                                    <small class="text-secondary">Phone</small>
+                                    <div class="form-input border">
+                                        <img src="/assets/svg/gray/LocalPhoneRounded.svg" alt="">
+                                        <input type="text" placeholder="Phone No.">
+                                        <div class="plus-btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex flex-column gap-2">
+                                    <small class="text-secondary">Label</small>
+                                    <div class="form-input border">
+                                        <input type="text" placeholder="Label">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-main text-white" data-bs-dismiss="modal"
+                        aria-label="Close">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/new_listing/add_contact.js"></script>
+</body>
+
+</html>

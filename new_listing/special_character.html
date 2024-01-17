@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Character</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/new_listing/special_character.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="h-screen d-flex overflow-hidden">
+        <div class="nav-menu active" id="nav-menu">
+            <nav class="nav-bar">
+                <img src="/assets/svg/logo.svg" alt="" class="logo">
+                <hr class="w-100 bg-secondary m-0">
+                <ul class="p-0">
+                    <li data-toggle="tooltip" id="nav-menu" data-bs-custom-class="custom-tooltip"
+                        data-bs-toggle="tooltip" data-bs-placement="right" title="Agent Search"
+                        onclick="location.replace('/agent_search.html')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.6144 15.5134C20.626 11.4028 19.9641 5.66631 16.0954 2.34956C12.2264 -0.967443 6.45548 -0.745081 2.85317 2.85981C-0.749146 6.4647 -0.967379 12.2358 2.3524 16.1024C5.67191 19.9688 11.4089 20.6265 15.5173 17.612C15.5622 17.6717 15.61 17.7285 15.6638 17.7838L21.4385 23.5585C22.0242 24.1446 22.9741 24.145 23.5602 23.5593C24.1463 22.9736 24.1466 22.0237 23.561 21.4376L17.7862 15.6629C17.7328 15.6088 17.6753 15.5588 17.6144 15.5134ZM13.8758 16.893C16.4283 15.4194 18.0007 12.6959 18.0007 9.74858C18.0007 5.19241 14.3072 1.4989 9.751 1.4989C5.19483 1.4989 1.50132 5.19241 1.50132 9.74858C1.50132 12.6959 3.0737 15.4194 5.62616 16.893C8.17862 18.3667 11.3234 18.3667 13.8758 16.893Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li onclick="openMenu(0,this)" id="nav-menu" class="active" data-toggle="tooltip"
+                        data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-placement="right"
+                        title="Property Base">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M23.6208 0.114018C23.8564 0.250613 23.9999 0.491749 24 0.751433V23.2484C24 23.6626 23.6418 23.9983 23.2 23.9983H18.4C17.9582 23.9983 17.6 23.6626 17.6 23.2484V20.9987H16V23.2484C16 23.6626 15.6418 23.9983 15.2 23.9983H0.8C0.358172 23.9983 0 23.6626 0 23.2484V14.9995C0.00026134 14.6769 0.220645 14.3906 0.5472 14.2886L9.6 11.46V6.75063C9.60001 6.46684 9.77093 6.20736 10.0416 6.08022L22.8416 0.0810227C23.0898 -0.0354527 23.3848 -0.0229642 23.6208 0.114018ZM9.59998 13.0408L1.59998 15.5395V22.4985H9.59998V13.0408ZM14.4 22.4985H11.2V7.21404L22.4 1.96474V22.4985H19.2V20.2488C19.2 19.8346 18.8418 19.4989 18.4 19.4989H15.2C14.7581 19.4989 14.4 19.8346 14.4 20.2488V22.4985Z"
+                                fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.8696 4.80103H19.257V6.28466H20.8696V4.80103ZM12.8064 7.76789H14.419V9.25152H12.8064V7.76789ZM14.419 10.7347H12.8064V12.2183H14.419V10.7347ZM14.419 13.7016H12.8064V15.1852H14.419V13.7016ZM3.13049 16.6685H4.74314V18.1521H3.13049V16.6685ZM6.35583 16.6685H7.96848V18.1521H6.35583V16.6685ZM4.74314 19.6353H3.13049V21.1189H4.74314V19.6353ZM6.35583 19.6353H7.96848V21.1189H6.35583V19.6353ZM16.0317 13.7016H17.6444V15.1852H16.0317V13.7016ZM14.419 16.6685H12.8064V18.1521H14.419V16.6685ZM16.0317 16.6685H17.6444V18.1521H16.0317V16.6685ZM20.8696 13.7016H19.257V15.1852H20.8696V13.7016ZM19.257 16.6685H20.8696V18.1521H19.257V16.6685ZM16.0317 10.7347H17.6444V12.2183H16.0317V10.7347ZM20.8696 10.7347H19.257V12.2183H20.8696V10.7347ZM17.6444 7.76789H16.0317V9.25152H17.6444V7.76789ZM19.257 7.76789H20.8696V9.25152H19.257V7.76789Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li onclick="openMenu(1,this)" id="nav-menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.604 11.0482C17.2131 10.0104 17.4761 8.80583 17.355 7.60869C17.176 5.82494 16.18 4.24816 14.552 3.16931L13.447 4.83508C14.566 5.57697 15.247 6.63382 15.365 7.80866C15.4194 8.35468 15.3514 8.90596 15.166 9.42241C14.9806 9.93887 14.6823 10.4075 14.293 10.7942L13.101 11.9861L14.719 12.461C18.951 13.7008 19 17.9562 19 17.9992H21C21 16.2105 20.044 12.715 16.604 11.0482Z"
+                                fill="currentColor" />
+                            <path
+                                d="M9.5 12C11.706 12 13.5 10.2062 13.5 8.00054C13.5 5.79485 11.706 4.0011 9.5 4.0011C7.294 4.0011 5.5 5.79485 5.5 8.00054C5.5 10.2062 7.294 12 9.5 12ZM9.5 6.00082C10.603 6.00082 11.5 6.89769 11.5 8.00054C11.5 9.10338 10.603 10.0003 9.5 10.0003C8.397 10.0003 7.5 9.10338 7.5 8.00054C7.5 6.89769 8.397 6.00082 9.5 6.00082ZM11 12.9998H8C4.691 12.9998 2 15.6905 2 18.999V19.9988H4V18.999C4 16.7933 5.794 14.9996 8 14.9996H11C13.206 14.9996 15 16.7933 15 18.999V19.9988H17V18.999C17 15.6905 14.309 12.9998 11 12.9998Z"
+                                fill="currentColor" />
+                        </svg>
+                    </li>
+                    <li id="nav-menu">
+                        <div class="menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.988 2.01343L21.988 5.01301L19.701 7.30068L16.701 4.30111L18.988 2.01343ZM8 15.9995H11L18.287 8.71349L15.287 5.71391L8 12.9999V15.9995Z"
+                                    fill="currentColor" />
+                                <path
+                                    d="M19 18.9991H8.158C8.132 18.9991 8.105 19.0091 8.079 19.0091C8.046 19.0091 8.013 19.0001 7.979 18.9991H5V5.00106H11.847L13.847 3.00134H5C3.897 3.00134 3 3.89722 3 5.00106V18.9991C3 20.1029 3.897 20.9988 5 20.9988H19C19.5304 20.9988 20.0391 20.7881 20.4142 20.4131C20.7893 20.0381 21 19.5295 21 18.9991V10.3323L19 12.332V18.9991Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div class="modal-menu" id="document-menu">
+                            <h5 class="m-0">Document</h5>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">Agreement</h5>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="p-0 mt-auto">
+                    <li>
+                        <a href="/">
+                            <img src="/assets/svg/primary/grid-4.svg" alt="" width="24">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="menu" onclick="toggleMenu('setting-menu')">
+                            <img src="/assets/svg/primary/setting.svg" alt="" width="24">
+                        </div>
+                        <div class="modal-menu" id="setting-menu">
+                            <h5 class="m-0">Setting</h5>
+                            <a class="d-flex align-items-center gap-3 justify-content-start" href="/user.html">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">User</h5>
+                            </a>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">User Permission</h5>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="/assets/svg/gray/arrow-right.svg" alt="">
+                                <h5 class="text-primary-2 m-0">Location</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <img src="/assets/svg/primary/bell-fill.svg" alt="" width="24">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/my_profile.html">
+                            <div class="profile">K</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-bar-menu">
+                <div class="more" id="more-btn" onclick="toggleNav()">
+                    <img src="/assets/svg/gray/arrow-left.svg" alt="" class="arrow-icon">
+                    <div class="d-flex flex-column w-50 line-box" style="gap: 3px;">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="menu-content" id="menu-content">
+                    <div class="title-nav">
+                        <img src="/assets/svg/bxs_edit.svg" alt="">
+                        <h5 class="m-0 fw-bold">Property Base</h5>
+                    </div>
+                    <div class="accordion" id="document-menu">
+                        <div class="accordion-item border-0 box">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Add new listing
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <ul class="nav-bar-menu-list">
+                                    <li>
+                                        <a href="/new_listing/unit_description.html">Unit Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/address_map.html">Address - Map</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="/new_listing/special_character.html">Special Character</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/photo_vdo.html">Photo & VDO</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/add_contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- แบบ ไม่มี sub menu -->
+                    <a class="single-link" href="/agent_base.html">My Listing</a>
+                </div>
+                <div class="menu-content d-none" id="menu-content">
+                    <div class="title-nav">
+                        <img src="/assets/svg/bxs_edit.svg" alt="">
+                        <h5 class="m-0 fw-bold">Document</h5>
+                    </div>
+                    <div class="accordion" id="document-menu">
+                        <div class="accordion-item border-0 box">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Menu 1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <ul class="nav-bar-menu-list">
+                                    <li class="active">
+                                        <a href="/new_listing/unit_description.html">Unit Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/address_map.html">Address - Map</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/special_character.html">Special Character</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/photo_vdo.html">Photo & VDO</a>
+                                    </li>
+                                    <li>
+                                        <a href="/new_listing/add_contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- แบบ ไม่มี sub menu -->
+                    <a class="single-link" href="/agent_base.html">My Listing</a>
+                </div>
+            </div>
+            <div class="bg" onclick="toggleNav()"></div>
+        </div>
+        <div class="page">
+            <div class="head rounded-0">
+                <h5 class="m-0">Add new listing</h5>
+            </div>
+            <div class="bg-white pt-3 px-3 shadow-sm">
+                <div class="d-flex flex-sm-row flex-column align-items-sm-center gap-3 justify-content-sm-end">
+                    <div class="rounded-btn me-sm-auto" onclick="history.back()">
+                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.22 0L0.219999 5V6.4L5.22 11.4L6.64 10L3.36 6.7H14.5V4.7H3.36L6.66 1.4L5.22 0Z"
+                                fill="#001A53" />
+                        </svg>
+                        <div>Back</div>
+                    </div>
+                    <div class="rounded-btn">
+                        <div>Save & Exit</div>
+                    </div>
+                    <a class="rounded-btn bg-orange" href="/new_listing/photo_vdo.html">
+                        <div>Save & Next</div>
+                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.28 0L14.28 5V6.4L9.28 11.4L7.86 10L11.14 6.7H0V4.7H11.14L7.84 1.4L9.28 0Z"
+                                fill="white" />
+                        </svg>
+
+                    </a>
+                </div>
+                <ul class="tabs mt-3">
+                    <li><a href="/new_listing/unit_description.html">Unit Description</a></li>
+                    <li><a href="/new_listing/address_map.html">Address - Map</a></li>
+                    <li class="active"><a href="/new_listing/special_character.html">Special Character</a></li>
+                    <li><a href="/new_listing/photo_vdo.html">Photo & VDO</a></li>
+                    <li><a href="/new_listing/add_contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column gap-3 p-3">
+                <div class="d-flex align-items-center gap-3 position-relative">
+                    <div class="icon-box">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_171_26074)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.56433 0.061627C9.43528 0.0964044 9.24811 0.166406 9.14848 0.217231C8.95358 0.316691 0.294234 7.71717 0.133087 7.92203C-0.122782 8.24732 0.00551008 8.77354 0.387704 8.96629C0.578845 9.06267 0.634185 9.06687 1.71756 9.06687H2.84796V12.572C2.84796 16.5538 2.84429 16.5026 3.17946 17.1818C3.54216 17.9167 4.17616 18.4764 4.95333 18.7477L5.32886 18.8787L7.55895 18.8919L9.789 18.905L9.89458 18.8059C10.0335 18.6754 10.0394 18.4141 9.90607 18.2934C9.81707 18.2127 9.69548 18.207 7.61514 18.1859C5.47405 18.1641 5.41152 18.161 5.1518 18.063C4.39859 17.7789 3.84519 17.1734 3.65338 16.4234C3.56644 16.0833 3.56317 15.9357 3.56317 12.3209V8.57109L3.45343 8.46139L3.34374 8.35165H2.04535C1.33125 8.35165 0.748262 8.33654 0.749737 8.31813C0.754878 8.25546 9.35942 0.918545 9.53496 0.827132C9.77706 0.701075 10.2255 0.702327 10.4695 0.829725C10.5678 0.881086 11.3876 1.55723 12.2912 2.3323C13.1948 3.10738 13.9726 3.75371 14.0195 3.76864C14.1471 3.80914 14.3296 3.74955 14.4042 3.64298C14.4572 3.56739 14.4702 3.36932 14.4702 2.64231V1.7359H15.4536H16.4371V3.76613C16.4371 4.88277 16.4487 5.82681 16.463 5.86404C16.4773 5.90123 17.1132 6.47113 17.8761 7.13047L19.2633 8.3293L17.9356 8.35165L16.6079 8.374L16.5224 8.47954C16.4458 8.57431 16.4371 8.66376 16.4371 9.35635C16.4371 10.0689 16.4441 10.1366 16.5297 10.2454C16.6606 10.4118 16.9288 10.4118 17.0596 10.2454C17.1416 10.1413 17.1523 10.0662 17.1523 9.59725V9.06687H18.2827C19.3664 9.06687 19.4213 9.06271 19.6113 8.96629C20.0183 8.75982 20.1283 8.22394 19.8328 7.88743C19.7616 7.80626 19.1295 7.24892 18.428 6.64886L17.1528 5.55784L17.1525 3.399L17.1523 1.24012L17.0425 1.13043L16.9328 1.02069H15.4606C14.0784 1.02069 13.982 1.02592 13.8829 1.10602C13.7819 1.18774 13.7764 1.22193 13.755 1.90697L13.7327 2.62255L12.3606 1.44825C11.4457 0.66518 10.9157 0.242577 10.7697 0.179817C10.3206 -0.0134259 9.97048 -0.0477564 9.56433 0.061627ZM13.4179 10.6478C12.9991 10.8428 12.7741 11.2215 12.7726 11.734L12.7716 12.0542L12.5651 12.1696L12.3587 12.285L12.0351 12.125C11.5229 11.8719 11.077 11.9095 10.7038 12.2372C10.4941 12.4213 10.015 13.2423 9.94804 13.5322C9.8371 14.0129 10.0549 14.4726 10.5334 14.7679L10.8047 14.9354V15.189C10.8047 15.4342 10.7996 15.445 10.6503 15.5162C10.4286 15.622 10.1433 15.893 10.0315 16.1042C9.95899 16.2412 9.93539 16.3638 9.93588 16.6006C9.93651 16.9039 9.94683 16.9335 10.2216 17.4223C10.6603 18.2028 10.892 18.3842 11.4529 18.386C11.7295 18.3869 11.7996 18.3683 12.057 18.226L12.3483 18.065L12.5593 18.1813L12.7703 18.2976L12.771 18.583C12.7719 19.0009 12.8482 19.2022 13.1059 19.4668C13.3953 19.7639 13.6365 19.8398 14.2914 19.8398C14.9464 19.8398 15.1876 19.7639 15.4769 19.4668C15.7332 19.2036 15.8113 19 15.8113 18.5943V18.3202L16.0193 18.1906L16.2275 18.0611L16.5222 18.2241C16.7835 18.3685 16.8526 18.3869 17.1299 18.386C17.679 18.3843 17.9182 18.2037 18.3326 17.4782C18.6178 16.9787 18.6924 16.7414 18.6542 16.4536C18.605 16.0815 18.3074 15.695 17.9326 15.5162C17.7832 15.445 17.7781 15.4342 17.7781 15.189V14.9354L18.0494 14.7679C18.3783 14.565 18.5596 14.3266 18.6323 14.0018C18.7095 13.6569 18.6394 13.4036 18.3116 12.8427C17.9134 12.1613 17.6564 11.9689 17.1417 11.9664C16.9201 11.9654 16.813 11.994 16.5477 12.125L16.2242 12.285L16.0177 12.1696L15.8113 12.0542L15.8103 11.734C15.8087 11.2215 15.5837 10.8428 15.1649 10.6478C14.9611 10.5529 14.8778 10.5429 14.2914 10.5429C13.7051 10.5429 13.6218 10.5529 13.4179 10.6478ZM14.9654 11.3879C15.0905 11.513 15.096 11.5357 15.096 11.9222C15.096 12.4289 15.1427 12.5337 15.4294 12.6703C15.5534 12.7294 15.7511 12.8412 15.8688 12.9189C15.9865 12.9966 16.1395 13.0601 16.209 13.0601C16.2784 13.0601 16.4839 12.9732 16.6655 12.867C17.1039 12.6106 17.2462 12.608 17.4611 12.8523C17.5494 12.9527 17.699 13.1866 17.7935 13.3722C18.0502 13.8763 18.0099 13.9729 17.3921 14.3326C17.1773 14.4576 17.066 14.5515 17.0513 14.6199C17.0064 14.8289 17.0452 15.7639 17.1015 15.8317C17.1321 15.8687 17.3089 15.9856 17.4942 16.0917C17.823 16.2798 17.9569 16.4298 17.9569 16.6098C17.9569 16.7265 17.5271 17.4722 17.3871 17.5984C17.2285 17.7414 17.0376 17.71 16.6389 17.4755C16.3008 17.2766 16.1138 17.2468 15.978 17.3701C15.9306 17.4131 15.7381 17.5288 15.5502 17.6271C15.3424 17.7358 15.1866 17.8497 15.1529 17.9177C15.1215 17.9809 15.0971 18.2006 15.0967 18.4235C15.0959 18.864 15.0624 18.9594 14.8734 19.0571C14.6922 19.1508 13.8907 19.1508 13.7094 19.0571C13.5205 18.9594 13.4869 18.864 13.4861 18.4235C13.4858 18.2004 13.4615 17.9824 13.4303 17.9211C13.3999 17.8616 13.2745 17.7599 13.1515 17.6951C13.0286 17.6305 12.8285 17.5132 12.7069 17.4347C12.5854 17.3561 12.4376 17.2919 12.3786 17.2919C12.3196 17.2919 12.1052 17.3824 11.9022 17.493C11.5078 17.7081 11.3735 17.7342 11.2188 17.6259C11.1083 17.5484 10.6259 16.7215 10.6259 16.6094C10.6259 16.4274 10.7466 16.2928 11.0844 16.098C11.2775 15.9866 11.4618 15.8526 11.494 15.8002C11.5559 15.6993 11.5621 14.7011 11.5016 14.5606C11.4847 14.5213 11.3232 14.4046 11.1427 14.3014C10.9622 14.1981 10.7776 14.0728 10.7324 14.0229C10.5862 13.8613 10.6279 13.6445 10.8898 13.2029C11.0207 12.9823 11.1607 12.7768 11.2009 12.7462C11.3451 12.6365 11.5866 12.6791 11.9245 12.8739C12.1022 12.9763 12.3044 13.0601 12.3738 13.0601C12.4433 13.0601 12.5964 12.9966 12.7141 12.9189C12.8318 12.8412 13.0295 12.7294 13.1534 12.6703C13.4401 12.5337 13.4868 12.4289 13.4868 11.9222C13.4868 11.5357 13.4923 11.513 13.6175 11.3879C13.7475 11.2578 13.7505 11.2572 14.2914 11.2572C14.8323 11.2572 14.8353 11.2578 14.9654 11.3879ZM13.8142 13.6434C13.436 13.767 13.0541 14.0972 12.8684 14.4612C12.4782 15.226 12.8158 16.2431 13.5831 16.614C13.9394 16.7862 14.2798 16.8269 14.6342 16.7394C15.656 16.4873 16.1816 15.3769 15.7135 14.4593C15.5756 14.1891 15.2447 13.8636 14.9723 13.7303C14.6759 13.5853 14.1198 13.5436 13.8142 13.6434ZM14.6808 14.3908C15.0524 14.5707 15.2502 15.0102 15.1411 15.4137C15.0693 15.6797 14.7819 15.9683 14.5182 16.0393C13.8853 16.2098 13.2909 15.6335 13.4383 14.9924C13.5694 14.4227 14.1579 14.1378 14.6808 14.3908Z"
+                                    fill="white" stroke="white" stroke-width="0.2" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_171_26074">
+                                    <rect width="20" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h5 class="m-0">Special Character</h5>
+                    <div class="line-detail">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="bg-white d-flex flex-column gap-3 p-3 rounded-3 shadow">
+                    <div class="d-flex align-items-center gap-3 position-relative">
+                        <h4 class="m-0">Amenities</h4>
+                        <div class="line-detail">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Furniture</h6>
+                        <div class="select" id="furniture">
+                            <div class="item">
+                                <img src="/assets/images/furniture/mdi_table-chair.png" alt="">
+                                <div>Furniture</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/furniture/mdi_desk.png" alt="">
+                                <div>Work / study / desk</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/furniture/mdi_bookshelf.png" alt="">
+                                <div>Bookshelf</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/furniture/bx_bed.png" alt="">
+                                <div>Bed</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/furniture/mdi_sofa-single.png" alt="">
+                                <div>Sofa</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/furniture/icon-park-solid_air-conditioning.png" alt="">
+                                <div>Air Condition</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/furniture/mdi_molecule-co2.png" alt="">
+                                <div>
+                                    Carbon Monoxide Detector</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Appliance</h6>
+                        <div class="select" id="appliance">
+                            <div class="item">
+                                <img src="/assets/images/appliance/fa-solid_tv.png" alt="">
+                                <div>TV</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/fluent_speaker-2-32-filled.png" alt="">
+                                <div>Speaker</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/radio.png" alt="">
+                                <div>Intercom</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/tabler_smart-home.png" alt="">
+                                <div>Smart home <br>System</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/mdi_smoke.png" alt="">
+                                <div>Smoke <br>Detector</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/fa-solid_wifi.png" alt="">
+                                <div>Wi-fi</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/ic_outline-coffee-maker.png" alt="">
+                                <div>Coffee Machine</div>
+                            </div>
+                            <!-- line 2 -->
+                            <div class="item">
+                                <img src="/assets/images/appliance/ic_baseline-table-bar.png" alt="">
+                                <div>Coffee table</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/material-symbols_oven-gen.png" alt="">
+                                <div>Electric Oven</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/mdi_stove.png" alt="">
+                                <div>Electric Stove</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/material-symbols_range-hood.png" alt="">
+                                <div>Hood</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/material-symbols_microwave-gen.png" alt="">
+                                <div>Microwave</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/ep_refrigerator.png" alt="">
+                                <div>Refrigerator</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/Frame 188.png" alt="">
+                                <div>Rice Cooker</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/mdi_toaster-oven.png" alt="">
+                                <div>Toaster</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/ph_cooking-pot-bold.png" alt="">
+                                <div>Cookware / Pots <br>/ Pans</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/crockery 1 (Traced).png" alt="">
+                                <div>Crockery / Plates <br>/ Bowls</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/fe_cutlery.png" alt="">
+                                <div>Cutlery Set</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/iconoir_dishwasher.png" alt="">
+                                <div>Dishwasher</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/Frame 185.png" alt="">
+                                <div>Dryer Machine</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/Frame 185-1.png" alt="">
+                                <div>Washer machine </div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/ic_round-iron.png" alt="">
+                                <div>Iron and Ironing Board</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/bx_bath.png" alt="">
+                                <div>Bathtub</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/ph_shower-fill.png" alt="">
+                                <div>Shower</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/material-symbols_water-heater.png" alt="">
+                                <div>Water Heater</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/appliance/mdi_hair-dryer.png" alt="">
+                                <div>Hair Dryer</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Other</h6>
+                        <div class="select" id="other">
+                            <div class="item">
+                                <img src="/assets/images/other/maki_garden.png" alt="">
+                                <div>Private garden</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/other/la_swimming-pool.png" alt="">
+                                <div>Private <br>Swimming Pool</div>
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/other/icon-park-outline_elevator.png" alt="">
+                                <div>Rice Cooker</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white d-flex flex-column gap-3 p-3 rounded-3 shadow">
+                    <div class="d-flex align-items-center gap-3 position-relative">
+                        <h4 class="m-0">Facilities</h4>
+                        <div class="line-detail">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Pet</h6>
+                        <div class="select" id="pet">
+                            <div class="item">Pet Friendly</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Exterior</h6>
+                        <div class="select" id="exterior">
+                            <div class="item">Triplex</div>
+                            <div class="item">Double <br>High Ceiling</div>
+                            <div class="item">Common <br>Pool</div>
+                            <div class="item">Common <br>Swimming Pool</div>
+                            <div class="item">Private <br>Swimming <br>Pool</div>
+                            <div class="item">Big Garden</div>
+                            <div class="item">Penthouse</div>
+                            <div class="item">Huge <br>Terrace</div>
+                            <div class="item">Duplex <br>condo</div>
+                            <div class="item">Big Balcony</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Unit Location</h6>
+                        <div class="select" id="unitLocation">
+                            <div class="item">Garden View</div>
+                            <div class="item">Lake View</div>
+                            <div class="item">Corner Unit</div>
+                            <div class="item">Top floor</div>
+                            <div class="item">A whole floor</div>
+                            <div class="item">Ground Floor</div>
+                            <div class="item">River View</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Unit Character</h6>
+                        <div class="select" id="unit_character">
+                            <div class="item">Newly<br>renovated </div>
+                            <div class="item">Fully<br>Furnished</div>
+                            <div class="item">Corner Unit</div>
+                            <div class="item">Top floor</div>
+                            <div class="item">A whole floor</div>
+                            <div class="item">Ground Floor</div>
+                            <div class="item">River View</div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="d-flex flex-column gap-2">
+                        <h6 class="m-0">Furnished</h6>
+                        <div class="select" id="furnished">
+                            <div class="item">Split-type Air</div>
+                            <div class="item">Big Center <br>Air</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/main.js"></script>
+        <script src="/js/nav.js"></script>
+        <script src="/js/new_listing/special_character.js"></script>
+</body>
+
+</html>

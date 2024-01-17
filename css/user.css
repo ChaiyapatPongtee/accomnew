@@ -1,0 +1,145 @@
+.new-user-btn{
+    padding: 10px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 4px 4px 20px 0px #00000014;
+    background: linear-gradient(66.77deg, #4B5F87 -3.6%, #001A53 64.51%);
+    color: white;
+    cursor: pointer;
+}
+
+.new-user-btn .plus-icon{
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.plus-icon::before,.plus-icon::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+}
+
+.plus-icon::after{
+    transform: translate(-50%,-50%) rotateZ(90deg);
+}
+
+.text-sea{
+    color: #00BAC7;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.icon-white{
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    box-shadow: 4px 4px 20px 0px #00000014;
+    cursor: pointer;
+}
+
+.overflow-x-auto{
+    overflow-x: auto;
+    width: 100%;
+}
+
+.overflow-x-auto table{
+    width: 100%;
+}
+
+.agent-base-table {
+    width: 100%;
+}
+
+.agent-base-table thead tr th{
+    text-align: center;
+}
+.agent-base-table tbody tr td{
+    padding: 10px;
+}
+
+.agent-base-table tbody tr td:not(:first-child){
+    text-align: center;
+}
+.agent-base-table tbody tr td:first-child{
+    font-size: 110%;
+}
+
+.drag{
+    background-color: #ebf8ff6e;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #384db73a;
+    border-style: dashed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.my-table{
+    border-collapse: collapse;
+    font-size: 85%;
+}
+
+.my-table thead{
+    background: #F8F8F8;
+    border-bottom: 1px solid #00000014;
+}
+
+.my-table thead tr th{
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.my-table tbody tr td{
+    padding: 10px;
+    border-bottom: 1px solid #00000014;
+    text-align: center;
+}
+
+.bg-main{
+    background-color: #00BAC7;
+}
+
+.bg-main:hover{
+    background-color: #1ad3e0;
+}
+
+.area_type{
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #DFDFDF;
+    font-size: small;
+}
+
+.type{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #DFDFDF;
+    border-radius: 10px;
+}
+
+.rent_bg,
+.sale_bg {
+    position: absolute;
+    left: -7px;
+    top: 0px;
+    z-index: 1;
+}

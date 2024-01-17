@@ -1,0 +1,115 @@
+.rounded-btn{
+    padding: 10px 25px;
+    height: 40px;
+    border: 1px solid #D7D7D7;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    gap: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.rounded-btn:hover{
+    color: black;
+}
+.rounded-btn.bg-orange{
+    background: linear-gradient(71.87deg, #FD8A02 4.95%, #E6A000 78.48%);
+    color: white;
+    border: none;
+}
+
+.bg-gray{
+    background-color: #F4F4F4;
+}
+
+.bg-main{
+    background-color: #00BAC7;
+}
+
+.bg-main:hover{
+    background-color: #1ad3e0;
+}
+
+.line-detail{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    z-index: 1;
+}
+
+.line-detail div:first-child{
+    width: 100%;
+    height: 5px;
+    background-color: #F6E05E;
+    border-radius: 50px;
+}
+
+.line-detail div:nth-child(2){
+    background: linear-gradient(71.87deg, #FD8A02 4.95%, #E6A000 78.48%);
+    width: 40%;
+    height: 5px;
+    border-radius: 50px;
+}
+
+.tabs{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    
+}
+
+.tabs li{
+    padding: .7rem 1rem;
+    white-space: nowrap;
+}
+
+.tabs li a{
+    text-decoration: none;
+    color: #6C757D;
+}
+
+.tabs li.active{
+    border-bottom:2px solid #FD9800;
+}
+
+.tabs li.active a{
+    color: #FD9800;
+}
+
+.icon-box{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background: linear-gradient(71.87deg, #FD8A02 4.95%, #E6A000 78.48%);
+    box-shadow: 0px 5px 15px 0px #FFD59675;
+    display: grid;
+    place-items: center;
+}
+
+.icon-primary{
+    height: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    background: linear-gradient(66.77deg, #4B5F87 -3.6%, #001A53 64.51%);
+    box-shadow: 0px 5px 15px 0px #FFD59675;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.pointer{
+    cursor: pointer;
+}
